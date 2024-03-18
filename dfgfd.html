@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Rajdhani:wght@600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slay</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000;
+        }
+        
+        .area {
+            border: 2px solid #000;
+            width: 1000px;
+            height: 800px;
+            background: url("https://pixeljoint.com/files/icons/full/space__r1437994661.gif");
+            background-size: cover;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .X {
+            height: 30px;
+            background-color: #fff;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+        }
+        
+        .girlie {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .collectible {
+            width: 80px;
+            height: 80px;
+            background-image: url('files/items.png');
+            background-size: cover;
+            position: absolute;
+        }
+        
+        .meteor {
+            position: absolute;
+            width: 61px;
+            height: 180px;
+        }
+        
+        .game-over {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.1);
+            color: white;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .game-over p {
+            margin: 0;
+            font-size: 50px;
+            font-family: "Chakra Petch", sans-serif;
+            font-weight: 800;
+        }
+        .game-over button {
+            padding: 10px 20px;
+            font-size: 25px;
+            margin-top: 10px;
+            width:900px;
+            cursor: pointer;
+            font-family: "Chakra Petch", sans-serif;
+            font-weight: 800;
+            background-color: rgba(0, 0, 0, 0.7);
+            border: 1px solid #000;
+            color: #ffffff;
+            border: none;
+        }
+        .game-over button:hover {
+            background-color: #fff;
+            color: #000;
+        }
+        #video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+        }
+        #retry {
+            margin-top: 550px;
+        }
+    </style>
+</head>
+<body>
+    <video autoplay muted loop id="video">
+        <source src="files/background3.mp4" type="video/mp4">
+    </video>
+    <div class="area">
+        <div class="X"></div>
+        <img src="files/character.png" alt="Girlie" class="girlie">
+        <div class="game-over">
+            <p> <span id="finalScore"></span></p>
+            <button id="retry">Retry</button>
+            <button id="home">Back to Home</button>
+        </div>
+    </div>
+
+    <script>
+        const Area = document.querySelector(".area");
+        const girlie = document.querySelector(".girlie");
+        const gameOverScreen = document.querySelector(".game-over");
+        const scoreDisplay = document.getElementById("finalScore");
+        const retryButton = document.getElementById("retry");
+        const homeButton = document.getElementById("home");
+        let girliePosition = Area.offsetWidth / 2;
+        let score = 0;
+        let gameActive = true;
+        let meteorInterval = 2000;
+        document.addEventListener("keydown", function(e) {
+            if (!gameActive) return;
+            if (e.key === "ArrowLeft" && girliePosition > girlie.offsetWidth / 2) {
+                girliePosition -= 30;
+                girlie.style.left = girliePosition + 'px';
+            } else if (e.key === "ArrowRight" && girliePosition < Area.offsetWidth - girlie.offsetWidth / 2) {
+                girliePosition += 30;
+                girlie.style.left = girliePosition + 'px';
+            }
+        });
+        function spawnObject(type) {
+            if (!gameActive) return;
+            let object;
+            if (type === 'meteor') {
+                object = document.createElement('img');
+                const meteorNumber = Math.floor(Math.random() * 3) + 1;
+                object.src = 'files/meteor' + meteorNumber + '.gif';
+                object.classList.add('meteor');
+            } else {
+                object = document.createElement('div');
+                object.classList.add('collectible');
+            }
+            Area.appendChild(object);
+            let objectLeft = Math.floor(Math.random() * (Area.offsetWidth - object.offsetWidth));
+            object.style.left = objectLeft + 'px';
+            object.style.bottom = Area.offsetHeight - object.offsetHeight + 'px';
+            function getSpeed(type) {
+                if (type === 'meteor') {
+                    return Math.random() * 20 + 10;
+                } else {
+                    return 10;
+                }
+            }
+            let speed = getSpeed(type);
+            function moveObject() {
+                let objectBottom = parseInt(object.style.bottom) - speed;
+                object.style.bottom = objectBottom + 'px';
+                if (objectBottom <= -30) {
+                    object.remove();
+                    clearInterval(movementInterval);
+                    if (type === 'collectible') {
+                        gameOver();
+                    }
+                }
+                if (objectBottom < 100 && objectBottom > 0 && objectLeft < girliePosition + girlie.offsetWidth && objectLeft + object.offsetWidth > girliePosition) {
+                    if (type === 'meteor') {
+                        gameOver();
+                    } else {
+                        score++;
+                        object.remove();
+                        clearInterval(movementInterval);
+                    }
+                }
+            }
+            let movementInterval = setInterval(moveObject, 20);
+            if (type === 'collectible') {
+                setTimeout(function() { spawnObject('collectible'); }, Math.random() * 6000 + 2000);
+            }
+        }
+        function spawnMeteors() {
+            if (!gameActive) return;
+            spawnObject('meteor');
+            setTimeout(spawnMeteors, meteorInterval);
+            meteorInterval = Math.max(1000, meteorInterval * 0.9);
+        }
+        function gameOver() {
+            gameActive = false;
+            Area.style.backgroundImage = "url('files/gameover.png')";
+            gameOverScreen.style.display = "flex";
+            scoreDisplay.innerText = 'Score: ' + score;
+            girlie.style.display = "none";
+            document.querySelector('.X').style.display = 'none';
+            let collectibles = document.querySelectorAll('.collectible');
+            collectibles.forEach(collectible => collectible.remove());
+            let meteor = document.querySelectorAll('.meteor');
+            meteor.forEach(meteor => meteor.remove());
+        }
+        retryButton.addEventListener("click", function() {
+            Area.style.backgroundImage = "url('https://pixeljoint.com/files/icons/full/space__r1437994661.gif')";
+            location.reload();
+        });
+        homeButton.addEventListener("click", function() {
+            window.location.href = 'index.html';
+        });
+        spawnObject('collectible');
+        spawnMeteors();
+    </script>
+</body>
+</html>

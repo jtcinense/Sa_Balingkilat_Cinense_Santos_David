@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Rajdhani:wght@600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Developers Page</title>
+    <style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    header {
+        background: none;
+        color: #fff;
+        text-align: center;
+        z-index: 1;
+    }
+    header h1 {
+        font-size: 130px;
+        z-index: 1;
+        font-family: "Chakra Petch", sans-serif;
+        font-weight: 800;
+    }
+    main {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        padding: 20px;
+    }
+    .developer1 {
+    width: 30%;
+    height: 600px;
+    text-align: center;
+    margin-top: 200px;
+    position: relative;
+    padding-top: 75px;
+    background: linear-gradient(rgba(39, 22, 53, 0.5), rgba(78, 45, 98, 0.5)), url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVRPdFnthQVDAO0s4cH1wGWxl0SrbVqRLxfg&usqp=CAU");
+    background-size: cover;
+    border: 3px solid #000;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.developer2 {
+    width: 30%;
+    height: 600px;
+    text-align: center;
+    margin-top: 200px;
+    position: relative;
+    padding-top: 75px;
+    background: linear-gradient(rgba(39, 22, 53, 0.5), rgba(78, 45, 98, 0.5)), url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVRPdFnthQVDAO0s4cH1wGWxl0SrbVqRLxfg&usqp=CAU");
+    background-size: cover;
+    border: 3px solid #000;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.developer3 {
+    width: 30%;
+    height: 600px;
+    text-align: center;
+    margin-top: 200px;
+    position: relative;
+    padding-top: 75px;
+    background: linear-gradient(rgba(39, 22, 53, 0.5), rgba(78, 45, 98, 0.5)), url("dev3.jpg");
+    background-size: cover;
+    border: 3px solid #000;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+    .developer1:hover {
+        transform: translateY(-10px);
+    }
+    .developer2:hover {
+        transform: translateY(-10px);
+    }
+    .developer3:hover {
+        transform: translateY(-10px);
+    }
+    .developer1 img {
+        width: 300px;
+        border-radius: 50%;
+        position: absolute;
+        top: -205px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .developer2 img {
+        width: 300px;
+        border-radius: 50%;
+        position: absolute;
+        top: -205px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .developer3 img {
+        width: 300px;
+        border-radius: 50%;
+        position: absolute;
+        top: -205px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .developer1 h2{
+        font-size: 60px;
+        margin-top: 50px;
+        font-family: "Chakra Petch", sans-serif;
+        font-weight: 700;
+    }
+    .developer2 h2{
+        font-size: 60px;
+        margin-top: 50px;
+        font-family: "Chakra Petch", sans-serif;
+        font-weight: 700;
+    }
+    .developer3 h2{
+        font-size: 60px;
+        margin-top: 50px;
+        font-family: "Chakra Petch", sans-serif;
+        font-weight: 700;
+    }
+    .developer1 p {
+        font-size: 40px;
+        margin-top: 10px;
+        font-family: "Chakra Petch", sans-serif;
+            font-weight: 500;
+            color: #fff;
+    }
+    .developer2 p {
+        font-size: 40px;
+        margin-top: 10px;
+        font-family: "Chakra Petch", sans-serif;
+            font-weight: 500;
+            color: #fff;
+    }
+    .developer3 p {
+        font-size: 40px;
+        margin-top: 10px;
+        font-family: "Chakra Petch", sans-serif;
+        font-weight: 500;
+        color: #fff;
+    }
+    .developer1 h3, .developer2 h3, .developer3 h3 {
+        font-size: 40px;
+        margin-top: 10px;
+        font-family: "Chakra Petch", sans-serif;
+        font-weight: 600;
+        background: #000;
+        color: #fff;
+    }
+    .tips {
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    .tips h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 90px;
+        color: #fff;
+        font-family: "Chakra Petch", sans-serif;
+        font-weight: 700;
+    }
+    .tips ul {
+        list-style-type: none;
+        padding: 0;
+        font-size: 30px;
+    }
+    .tips ul li {
+        background-color: #f0f0f0;
+        margin-bottom: 10px;
+        padding: 10px;
+        border-left: 5px solid #333;
+        font-family: "Chakra Petch", sans-serif;
+        font-weight: 500;
+    }
+    .tips ul li strong {
+        display: block;
+    }
+    .reference-boxes {
+        padding: 20px;
+        text-align: center;
+    }
+    .reference-boxes h2{
+        font-size: 90px;
+        font-family: "Chakra Petch", sans-serif;
+        font-weight: 700;
+        color: #fff;
+    }
+    .reference-boxes .boxes {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+    }
+    .reference-boxes .box {
+        flex: 0 0 auto;
+        width: 55%;
+        height: 600px;
+        margin: 20px;
+        padding: 10px;
+        background-color: #f0f0f0;
+        border: 1px solid #ddd;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+        min-width: 300px;
+    }
+    .reference-boxes .box h3 {
+        margin-top: 0;
+        font-size: 60px;
+        font-family: "Chakra Petch", sans-serif;
+        font-weight: 700;
+        
+    }
+    .reference-boxes .box p {
+        font-size: 40px;
+        font-family: "Chakra Petch", sans-serif;
+        font-weight: 600;
+    }
+    .reference-boxes .box a {
+        display: inline-block;
+        margin-top: 10px;
+        color: #333;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+    .reference-boxes .box a:hover {
+        color: #000;
+    }
+    .reference-boxes .box:hover {
+        transform: translateY(-5px);
+    }
+    .button {
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        margin-top: 150px;
+        font-size: 60px;
+        text-align: center;
+    }
+    .btn {
+        display: block;
+        width: 80%;
+        max-width: 600px;
+        margin: auto;
+        padding: 20px;
+        font-size: 50px;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        font-family: "Chakra Petch", sans-serif;
+        font-weight: 600;
+    }
+    .btn:hover {
+        background-color: #fff;
+        color: #000;
+        }
+    .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1000;
+    }
+    .developer1 h2, .developer1 h4,
+    .developer2 h2, .developer2 h4,
+    .developer3 h2, .developer3 h4 {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .developer1 h2, .developer2 h2, .developer3 h2 {
+        margin-top: 30px;
+    }
+    .developer1 h4, .developer2 h4, .developer3 h4 {
+        font-size: 30px;
+        font-family: "Chakra Petch", sans-serif;
+        font-weight: 700;
+    }
+    </style>
+</head>
+<body>
+    <video autoplay loop muted playsinline class="background">
+        <source src="files/background2.mp4" type="video/mp4">
+    </video>
+    <header>
+        <h1>◈ Game Developers ◈</h1>
+    </header>
+    <main>
+        <section class="developer1">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3OOfrBLXPZKaVZ-nwC8p9_dYGFi3jY4ktjQ&usqp=CAU" alt="Developer 1">
+            <h2>Jabril Arnold Cinense</h2>
+            <h4>jcinense2027@clc.pshs.edu.ph</h4>
+            <h4>9-Balingkilat</h4>
+            <h3>PRO CODER</h3>
+            <p>raraarararrrrrr arararrarar</p>
+        </section>
+        <section class="developer2">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3OOfrBLXPZKaVZ-nwC8p9_dYGFi3jY4ktjQ&usqp=CAU" alt="Developer 2">
+            <h2>Seb Rafael Santos</h2>
+            <h4>ssantos2027@clc.pshs.edu.ph</h4>
+            <h4>9-Balingkilat</h4>
+            <h3>EMOTIONAL SUPPORT</h3>
+            <p>raraarararrrrrr arararrarar</p>
+        </section>
+        <section class="developer3">
+            <img src="developer3.jpg" alt="Developer 3">
+            <h2>Brenice Marjorie David</h2>
+            <h4>bdavid2027@clc.pshs.edu.ph</h4>
+            <h4>9-Balingkilat</h4>
+            <h3>PRO DESIGNER</h3>
+            <p>raraarararrrrrr arararrarar</p>
+        </section>
+        <div class = "button">
+        <a href = "index.html" class = "btn">∘ Back ∘</a>
+        </div>
+        <section class="tips">
+    <h2>◌ Tips for the Game ◌</h2>
+    <ul>
+        <li><strong>Tip 1:</strong> Stay Calm.</li>
+        <li><strong>Tip 2:</strong> Aim for precise movements</li>
+        <li><strong>Tip 3:</strong> Learn attack patterns</li>
+        <li><strong>Tip 4:</strong> W A S D to move</li>
+        <li><strong>Tip 5:</strong> Press E to start the game</li>
+    </ul>
+</section>
+<section class="reference-boxes">
+    <h2>◌ Reference Boxes ◌</h2>
+    <div class="boxes">
+        <div class="box">
+            <h3>Inspirations for the Game</h3>
+            <p>Terraria and its Calamity mod</p>
+            <p>Undertale</p>
+        </div>
+        <div class="box">
+            <h3>Reference Codes</h3>
+            <p>https://www.youtube.com/watch?v=r0wAEi86vTA&t=7s</p>
+        </div>
+    </div>
+</section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Rajdhani:wght@600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Play</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 20px;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)), url("https://rare-gallery.com/thumbnail/53592-Pixel-Art-Galaxy.png");
+    background-size: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+}
+@keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+#background-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    width: auto; 
+    height: auto;
+    z-index: -100;
+    background-size: cover;
+}
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: transparent;
+}
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+header h1 {
+    color: #fff;
+    font-size: 100px;
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 800;
+}
+
+.content {
+    display: flex;
+    align-items: flex-start;
+}
+
+.instructions {
+    flex: 1;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    border: 2px solid #000;
+    max-width: 800px;
+}
+
+.instructions h2 {
+    color: #fffdfd;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.instructions p {
+    color: #777;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.instructions ol {
+    margin-left: 20px;
+}
+
+.instructions li {
+    color: #444;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.video-container {
+    flex: 1;
+    padding-left: 20px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.video-container video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.video-container video::-webkit-media-controls {
+    display: none;
+}
+    .container h1 {
+        display: flex;
+        justify-content: center;
+        font-size: 70px;
+        font-family: "Chakra Petch", sans-serif;
+        font-weight: 600;
+        color: #000;
+        background: #fff;
+    }
+    .container p {
+        font-size: 50px;
+    }
+    .buttons {
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        margin-top: 150px;
+        font-size: 60px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        animation: fadeIn 1s ease-in-out;
+    }
+    .button {
+        display: block;
+        width: 100%;
+        max-width: 730px;
+        padding: 20px;
+        font-size: 50px;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        font-family: "Chakra Petch", sans-serif;
+        font-weight: 600;
+        margin: 0;
+    }
+    .button:hover {
+        background-color: #fff;
+        color: #000;
+        }
+</style>
+<body>
+    <video autoplay loop muted id="background-video">
+        <source src="files/background2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <header>
+        <h1>◈ How to Play ◈ </h1>
+    </header>
+    <div class = "buttons">
+        <a href=" " class = "button">∘ Previous ∘</a>
+        <a href=" " class = "button">∘ Back to Home ∘</a>
+    </div>
+    <div class="container">
+        <h1>◌ Game 2 ◌</h1>
+        <div class="content">
+            <section class="instructions">
+                <p>woaahahahahajdhjdsjjdfsjfjfs sdfjsfjflh</p>
+            </section>
+            <div class="video-container">
+                <video autoplay loop muted controls="false">
+                    <source src="files/arrows.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="content">
+            <section class="instructions">
+                <p>wohahahahaaaaaaa.</p>
+            </section>
+            <div class="video-container">
+                <video autoplay loop muted controls="false">
+                    <source src="files/getndodge.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

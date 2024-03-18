@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cs Game</title>
+   
+
+    
+    <style>
+        body {
+          margin: 0;
+        }
+        #background-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    width: auto; 
+    height: auto;
+    z-index: -100;
+    background-size: cover;
+}
+        
+      </style>
+</head>
+    <body>
+        <canvas></canvas>
+        <video autoplay loop muted id="background-video">
+          <source src="backgroundvid.mp4" type="video/mp4">
+      </video>
+      <a href="index.html" class = "button">∘ back ∘</a>
+        <img src="playersprite.png" width="10" height="10" alt="..." id="playerrah">
+        <img src="bulleteast.png" width="10" height="10" alt="..." id="bullet1">
+        <img src="bulletwest.png" width="10" height="10" alt="..." id="bullet2">
+        <img src="bulletnorth.png" width="10" height="10" alt="..." id="bullet3">
+        <img src="bulletsouth.png" width="10" height="10" alt="..." id="bullet4">
+        <img src="purpbulleteast.png" width="10" height="10" alt="..." id="longbullet1">
+        <img src="purpbulletnorth.png" width="10" height="10" alt="..." id="longbullet2">
+        <img src="fastbulleteast.png" width="10" height="10" alt="..." id="fastbullet1">
+        <img src="fastbulletwest.png" width="10" height="10" alt="..." id="fastbullet2">
+        <img src="fastbulletnorth.png" width="10" height="10" alt="..." id="fastbullet3">
+        <img src="fastbulletsouth.png" width="10" height="10" alt="..." id="fastbullet4">
+        <img src="gameover.png" width="10" height="10" alt="..." id="gameover">
+        <img src="win.png" width="10" height="10" alt="..." id="win">
+        <script src="./index.js"></script>
+    </body>
+</html>
